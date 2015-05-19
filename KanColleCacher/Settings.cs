@@ -25,17 +25,17 @@ namespace d_f_32.KanColleCacher
         /// </summary>
         public static void Load()
         {
-			filePath = Directory.GetCurrentDirectory() + @"\Plugins\KanColleCacher.ini";
+			filePath = Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
+                        "grabacr.net",
+                        "KanColleViewer",
+                        "KanColleCacher.ini"
+                        );
 
 			if (!File.Exists(filePath))
 			{
-				var path = Path.Combine(
-						Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-						"grabacr.net",
-						"KanColleViewer",
-						"KanColleCacher.ini"
-						);
-				if (File.Exists(path))
+				var path = Directory.GetCurrentDirectory() + @"\Plugins\KanColleCacher.ini";
+                if (File.Exists(path))
 					filePath = path;
 			}
 
