@@ -50,7 +50,7 @@ namespace d_f_32.KanColleCacher
 				}
 				catch (Exception ex)
 				{
-					Current.CacheFolder = Directory.GetCurrentDirectory() + @"\MyCache";
+					Current.CacheFolder = @".\Cache";
 					Log.Exception(ex.InnerException, ex, "设置文件中CacheFolder不存在，试图创建时发生异常");
 				}
 			}
@@ -85,10 +85,10 @@ namespace d_f_32.KanColleCacher
         
         public Settings ()
         {       
-                _CacheFolder = Directory.GetCurrentDirectory() + @"\MyCache";
+                _CacheFolder = @".\Cache";
                 _CacheEnabled = true;
-                _HackEnabled = true;
-                _HackTitleEnabled = true;
+                _HackEnabled = false;
+                _HackTitleEnabled = false;
 
                 _CacheEntryFiles = 2;
                 _CachePortFiles = 2;
@@ -96,7 +96,7 @@ namespace d_f_32.KanColleCacher
                 _CacheResourceFiles = 2;
                 _CacheSoundFiles = 2;
 
-				_CheckFiles = 1;
+				_CheckFiles = 2;
 				//_SaveApiStart2 = true;
          }
        
